@@ -1,0 +1,1 @@
+"start": "babel-node index.js",
