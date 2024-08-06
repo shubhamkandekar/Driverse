@@ -7,7 +7,12 @@ import serviceRoutes from './routes/serviceRoutes.js';
 import errorHandler from './middlewares/errorMiddleware.js';
 import { apiLimiter } from './middlewares/rateLimiter.js';
 import authRoutes from './routes/authRoutes.js';
+import userRequestRoutes from './routes/Requests/UserServicereqRoute.js'
 import colors from 'colors';
+
+
+
+
 dotenv.config();
 connectDB();
 
@@ -19,7 +24,15 @@ app.use(express.json());
 
 app.use('/api/', apiLimiter);
 //authRoutes
-app.use('/api/auth', authRoutes);
+app.use('/api/v1/auth', authRoutes);
+
+
+// Use the user request routes
+app.use('/api/v1', userRequestRoutes);
+
+
+
+
 //Service Route
 app.use('/api/services', serviceRoutes);
 app.use(errorHandler);

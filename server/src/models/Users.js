@@ -23,12 +23,18 @@ const userSchema = new mongoose.Schema(
     },
     serviceType: {
       type: String,
-      enum: ["Driver", "Mechanic", "Tower"],
+      enum: ["Driver", "Mechanic", "Tower","Agent","Company"],
       required: true,
     },
     password: {
       type: String,
       required: true,
+    },
+    otp: {
+      type: String,
+    },
+    otpExpires: {
+      type: Date,
     },
     refreshTokens: [
       { type: mongoose.Schema.Types.ObjectId, ref: "RefreshToken" },
