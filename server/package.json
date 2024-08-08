@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon  src/index.js",
-    "build": "npx babel src --out-dir dist",
+    "build": "npm i",
     "test": "jest --config jest.config.mjs"
   },
   "keywords": [],
